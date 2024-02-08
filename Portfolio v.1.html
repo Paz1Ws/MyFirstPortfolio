@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CPaz/ Enginer Developer</title>
+   
+    <style>
+        
+
+    body {
+        margin: 0;
+        position:relative;
+        background-color: rgba(34, 2, 6, 0.97);
+    }
+    /*WELCOME ANIMATION*/
+    h1{
+
+      display:grid;
+      position:absolute;
+      font-family: Dubai;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      width: 100vw;
+      height:40vw;
+      text-transform: fullsize-kana;
+      animation: anim 4.5s linear forwards;
+      font-size:69px;
+      place-items:center;
+      
+    }
+    @keyframes anim {
+      0% {
+        text-shadow: 7px 7px 30px #fff;
+        letter-spacing: 50px;
+        opacity: 0.7;
+        -moz-transform: rotateY(-90deg);
+      }
+
+      100% {
+        text-shadow: 0 0 40px #fff;
+        opacity: 1;
+        letter-spacing: 1px;
+        -moz-transform: rotateY(0deg) translateZ(100px);
+        
+      }
+
+    }
+    
+    
+    /*FINISH WELCOME ANIMATION*/
+    blockquote {
+        background-color: rgba(66, 8, 16, 0.97); 
+        inline-size: 100vw; 
+        block-size: 100px;
+        margin: 0;
+        transition: background-color 0.3s;
+        height: 67px;
+        position:fixed;
+        top:0px;
+        z-index:0;
+    }
+    blockquote:hover {
+        background-color:rgba(93, 3, 13, 0.9);
+    }
+    #Logo {
+        inline-size: 30px;
+        block-size: 30px;
+    }
+    #InformationBar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    #InformationBar a:not(:has(img)) {
+        margin: 15px;
+        font-family: Rockwell;
+        color: rgb(255, 233, 233);
+        text-decoration-line: none;
+        position: relative;
+        z-index: 1;
+        padding: 5px;
+        transition: transform 0.5s ease-in-out; 
+        
+    }
+    #InformationBar a::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        background-color: rgba(93, 3, 13, 0.9);
+        left: 0;
+        right: 0;
+        animation: expandBox 0.5s; 
+    }
+    #InformationBar a:not(:has(img)):hover::before {
+        height: 25px;
+    }
+    #InformationBar  a:hover:not(:has(img)) {
+        transform: translateY(10px);
+        
+    }
+    #GridDiv {
+        display: none;
+        position: absolute;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        block-size: 27vw;
+        inline-size: 100vw; 
+        color: blue;
+        gap: 25px;
+        font-size: 48px;
+        inset: 25vw;
+        margin:auto;
+        animation: scroll 2.5s linear infinite alternate-reverse
+    }
+    #GridDiv:target {
+        display:grid;
+    }
+    @keyframes scroll {
+        0% {
+            transform: translateX(-20vw);
+        }
+        100% {
+            transform: translateX(-33vw);
+        }
+    }
+
+    #GridDiv a {
+        background-attachment: scroll;
+        background: rgba(93, 3, 13, 0.97);
+        border-radius: 15px;
+        text-decoration-line: none;
+        border: 10px ridge #f1321d;
+        color: rgb(240, 70, 70);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        position: relative;
+        font-family: Rockwell;
+    }
+    #GridDiv a span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #GridDiv a:first-child {
+        grid-column: 1 / span 2;
+    }
+
+    #GridDiv a:last-child {
+        grid-column: 1 / span -2;
+    }
+    #GridDiv a:nth-child(3) {
+        grid-area: 2/ 2/ -2/4;
+    }
+    #GridDiv a:nth-child(4) {
+        grid-area: 1/ 4/ 3/-1;
+    }
+    section {
+        display: none;
+    }
+    section:target{
+        display:block;
+    }
+        img:not(#Logo) {
+        position:absolute;
+        inline-size:350px;
+        block-size:350px;
+        inset: 12vw 70vw 30vw 30vw;
+        border-radius:50%;
+        image-rendering:optimizeQuality;
+        object-fit:contain;
+        }
+        
+        #AboutMe a {
+        position:relative;
+        inset: 1vw 80vw 27vw 0vw;
+        font-family:Rockwell;
+        font-size:48px;
+        text-align:right;
+        }
+        #AboutMe div{
+        position:relative;
+        inset:-5vw 80vw 20vw -15vw;
+        font-family:Rockwell;
+        font-size:24px;
+        text-align:right;
+        color:rgb(255, 224, 221, 0.97);
+       
+        }
+        #AboutMe .contact {
+            width:30px;
+            height:30px;
+            position:relative;
+            inset: 20.3vw 50vw 20vw -30vw;
+            border-radius:50%;
+        }
+        
+        
+    </style>
+</head>
+<body>
+     <h1 >  Hi/.Take a tour for my Portfolio.</h1>
+    
+    <div id="GridDiv">
+        <a href="#AboutMe"> <span>AboutMe</span></a>
+        <a href="#Technologies"><span>Technologies</span></a>
+        <a href="#Projects"><span>Projects</span></a>
+        <a href="#Contact"><span>Contact</span></a>
+        <a href="#Certifications"><span>Certifications</span></a>
+   </div>
+    <blockquote>
+        <div id="InformationBar">
+            <a href="#GridDiv">
+                <img id="Logo" src="Logo.jpg" alt="Logo" />
+            </a>
+            <a href="#AboutMe"> AboutMe </a>
+            <a href="#Technologies">Technologies</a>
+            <a href="#Projects">Projects</a>
+            <a href="#Certifications">Certifications</a>
+            <a href="#Contact">Contact</a>
+        </div>
+        <section id="AboutMe">
+            <div>
+                <div>
+                    <p>
+                        <a href="mailto:rewardmnx@mail.com" target="_blank">
+                            <img class="contact" src="Gmail.png" alt="Gmail" /></a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/christopher-paz-leon-745760202/" target="_blank">
+                            <img class="contact" src="Linke.png" alt="LinkedIn" /></a>
+                    </p>
+                    <p>
+                        <a href="https://wa.me/960186410" target="_blank">
+                            <img class="contact" src="Wsp.png" alt="Whatsapp" />
+
+                        </a>
+                    </p>
+                </div>
+                <img src="Photo.jfif" alt="MyPersonalPhoto" />
+                <a> Software Developer </a>
+                <p>------------------------</p>
+                Self-taught, passionate about development,
+                <br />
+                willing to develop or resolve 
+                <br />
+                any proyect, and give an excelent result. 
+
+            </div>
+            </section>
+            <section id="Technologies"> Tech</section>
+            <section id="Projects"> Projects</section>
+            <section id="Contact"> Conct</section>
+            <section id="Certifications" > Certifications</section>
+
+    </blockquote>
+    
+    
+    
+</body>
+</html>
